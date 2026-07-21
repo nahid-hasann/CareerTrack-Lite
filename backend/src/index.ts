@@ -3,6 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import healthRouter from './routes/health';
 import authRouter from './routes/authRoutes';
+import applicationRouter from './routes/applicationRoutes';
+import dashboardRouter from './routes/dashboardRoutes';
+import aiRouter from './routes/aiRoutes';
 
 dotenv.config();
 
@@ -16,6 +19,9 @@ app.use(express.json());
 // Routes
 app.use('/api', healthRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/applications', applicationRouter);
+app.use('/api/dashboard', dashboardRouter);
+app.use('/api/ai', aiRouter);
 
 // Root endpoint
 app.get('/', (_req, res) => {
