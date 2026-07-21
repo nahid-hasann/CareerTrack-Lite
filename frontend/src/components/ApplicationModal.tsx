@@ -23,6 +23,8 @@ const SOURCE_OPTIONS = [
   'LinkedIn',
   'Bdjobs',
   'Indeed',
+  'Wellfound',
+  'Facebook',
   'Company Website',
   'Referral',
   'Glassdoor',
