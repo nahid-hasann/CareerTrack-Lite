@@ -5,9 +5,10 @@
 [![React](https://img.shields.io/badge/React-18-cyan.svg)]()
 [![Node.js](https://img.shields.io/badge/Node.js-Express-green.svg)]()
 [![Prisma](https://img.shields.io/badge/ORM-Prisma-indigo.svg)]()
+[![Database](https://img.shields.io/badge/Database-MongoDB-green.svg)]()
 [![AI Bonus](https://img.shields.io/badge/AI_Feature-%2B5_Bonus_Marks-emerald.svg)]()
 
-> A modern, sleek, full-stack job application management system built with **React 18**, **Vite**, **TypeScript**, **Tailwind CSS**, **Node.js (Express)**, **Prisma ORM**, and **PostgreSQL**.
+> A modern, sleek, full-stack job application management system built with **React 18**, **Vite**, **TypeScript**, **Tailwind CSS**, **Node.js (Express)**, **Prisma ORM**, and **MongoDB Atlas**.
 
 ---
 
@@ -19,7 +20,7 @@
 | **Student ID** | 2026-CT-1088 |
 | **Test Email** | `test@careertrack.com` |
 | **Test Password** | `password123` |
-| **Database Used** | PostgreSQL (Prisma ORM) |
+| **Database Used** | MongoDB (Prisma ORM) |
 | **Language Used** | TypeScript |
 | **AI Feature Added** | Yes (+5 Bonus Marks) |
 
@@ -64,7 +65,7 @@
 - **Runtime**: [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/)
 - **Language**: TypeScript
 - **Database ORM**: [Prisma ORM](https://www.prisma.io/)
-- **Database**: PostgreSQL
+- **Database**: MongoDB Atlas
 - **Security**: `bcryptjs` (Password Hashing), `jsonwebtoken` (JWT Authentication), `cors`, `dotenv`
 
 ---
@@ -74,7 +75,7 @@
 ### **Prerequisites**
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [npm](https://www.npmjs.com/) or `yarn`
-- [PostgreSQL](https://www.postgresql.org/) database running locally or on the cloud (e.g. Supabase, ElephantSQL, Neon)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) database connection string
 
 ---
 
@@ -94,17 +95,14 @@ cp .env.example .env
 Edit your `backend/.env` file:
 ```env
 PORT=5001
-DATABASE_URL="postgresql://postgres:password@localhost:5432/careertrack_lite?schema=public"
+DATABASE_URL="mongodb+srv://user:password@cluster0.mongodb.net/careertrack_lite?retryWrites=true&w=majority"
 JWT_SECRET="your-super-secret-jwt-key"
 JWT_EXPIRES_IN="7d"
 ```
 
-Push Prisma schema to your database:
+Generate Prisma Client:
 ```bash
-# Push database schema
-npx prisma db push
-
-# Generate Prisma Client
+# Generate Prisma Client for MongoDB
 npx prisma generate
 ```
 
@@ -149,7 +147,7 @@ npm run dev
 ### **Backend (`backend/.env.example`)**
 ```env
 PORT=5001
-DATABASE_URL="postgresql://user:password@localhost:5432/careertrack_lite?schema=public"
+DATABASE_URL="mongodb+srv://user:password@cluster0.mongodb.net/careertrack_lite?retryWrites=true&w=majority"
 JWT_SECRET="super-secret-jwt-key"
 JWT_EXPIRES_IN="7d"
 ```
